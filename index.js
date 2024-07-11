@@ -274,7 +274,7 @@ app.get("/hotels/sort/reviews", (req, res) => {
 function filterByAmenity(hotel, amenity) {
   return hotel.amenity.toLowerCase() === amenity.toLowerCase();
 }
-app.get("hotels/filter/amenity", (req, res) => {
+app.get("/hotels/filter/amenity", (req, res) => {
   let amenity = req.query.amenity;
   let hotelsCopy = hotels.filter((hotel) => filterByAmenity(hotel, amenity));
   res.json({ hotels: hotelsCopy });
@@ -304,6 +304,7 @@ app.get("/hotels/filter/category", (req, res) => {
 //hotels/filter/category?category=luxury
 
 //7
-app.get('/hotels', (req, res) => {
+app.get("/hotels", (req, res) => {
   res.json({ hotels: hotels });
 });
+//hotels
